@@ -1,9 +1,8 @@
 pipeline {
     agent any
-    tools {
-       maven 'Maven 3.9.0'
-       jdk 'jdk8'
-   }
+    options {
+        skipStagesAfterUnstable()
+    }
     stages {
         stage('Build') {
             steps {
